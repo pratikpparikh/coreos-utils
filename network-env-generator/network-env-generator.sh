@@ -15,4 +15,4 @@ echo "PRIVATE_IPV4=${IP}" > ${TARGET}
 
 /usr/bin/chmod +x /etc/network-environment
 
-. ./etc/network-environment
+. /etc/network-environment
