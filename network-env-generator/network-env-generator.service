@@ -1,0 +1,12 @@
+[Unit]
+Description=Creates an EnvironmentFile with real networking
+Documentation=https://github.com/pratikpparikh/coreos-utils/network-env-generator
+Requires=network-online.target
+After=network-online.target
+[Service]
+ExecStartPre=-/usr/bin/mkdir -p /opt/bin
+ExecStartPre=/usr/bin/wget -N -P /opt/bin https://raw.githubusercontent.com/pratikpparikh/coreos-utils/master/network-env-generator/network-env-generator.sh
+ExecStartPre=/usr/bin/chmod +x /opt/bin/network-env-generator.sh
+ExecStart=/opt/bin/network-env-generator.sh enp0s25
+RemainAfterExit=yes
+Type=oneshot
