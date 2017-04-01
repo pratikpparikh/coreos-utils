@@ -14,4 +14,5 @@ touch ${TARGET}
 echo "PRIVATE_IPV4=${IP}" > ${TARGET}
 
 /usr/bin/chmod +x /etc/network-environment
-/usr/bin/env /etc/network-environment
+
+. ./etc/network-environment
